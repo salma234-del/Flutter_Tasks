@@ -1,30 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-class StoryModel {
-  final String imageLink;
-  final String name;
-  StoryModel({
-    required this.imageLink,
-    required this.name,
-  });
-}
-
-class ChatModel {
-  final String imageLink;
-  final String name;
-  final String message;
-  final String time;
-  final Color status;
-  ChatModel({
-    required this.imageLink,
-    required this.message,
-    required this.name,
-    required this.time,
-    required this.status,
-  });
-}
+import '../../models/chat/chat_model.dart';
+import '../../models/story/story_model.dart';
 
 class Messenger extends StatelessWidget {
   List<StoryModel> stories = [
