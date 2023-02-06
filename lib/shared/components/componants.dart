@@ -31,7 +31,7 @@ Widget defaultButton({
 Widget defaultTextField({
   required TextEditingController controller,
   required TextInputType type,
-  required Function validate,
+  required String? Function(String?) validate,
   Function? onSubmit,
   Function? onChange,
   bool password = false,
@@ -43,9 +43,7 @@ Widget defaultTextField({
     TextFormField(
       controller: controller,
       keyboardType: type,
-      validator: (value) {
-        validate(value);
-      },
+      validator: validate,
       onFieldSubmitted: (value) {
         onSubmit!(value);
       },

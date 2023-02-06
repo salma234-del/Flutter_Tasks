@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: emailCon,
                       type: TextInputType.emailAddress,
                       validate: (value) {
-                        if (value.isEmpty) {
+                        if (value!.isEmpty) {
                           return 'email must not be empty';
                         }
                         return null;
@@ -62,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: passCon,
                       type: TextInputType.visiblePassword,
                       validate: (value) {
-                        if (value.isEmpty) {
+                        if (value!.isEmpty) {
                           return 'password must not be empty';
                         }
                         return null;
