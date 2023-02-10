@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(50),
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadiusDirectional.only(
               topStart: Radius.circular(20),
             ),
@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
           child: Stack(
             alignment: AlignmentDirectional.bottomCenter,
             children: [
-              Image(
+              const Image(
                 image: NetworkImage('https://images.pexels.com/photos/70330/pexels-photo-70330.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'),
                 width: 200,
                 height: 200,
@@ -45,8 +45,8 @@ class HomeScreen extends StatelessWidget {
               Container(
                 color: Colors.black.withOpacity(0.5),
                 width: 200,
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: Text(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: const Text(
                   textAlign: TextAlign.center,
                   'Flower',
                   style: TextStyle(
@@ -64,5 +64,5 @@ class HomeScreen extends StatelessWidget {
 }
 
 void clickedButton() {
-  print('Clicked');
+  debugPrint('Clicked');
 }

@@ -4,6 +4,8 @@ import 'package:flutter_application_4/modules/counter/cubit/states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CounterScreen extends StatelessWidget {
+  const CounterScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -11,10 +13,10 @@ class CounterScreen extends StatelessWidget {
       child: BlocConsumer<CounterCubit, CounterStates>(
         listener: ((context, state) {
           if (state is CounterMinusState) {
-            print('Minus State ${state.counter}');
+            debugPrint('Minus State ${state.counter}');
           }
            if (state is CounterPlusState) {
-            print('Plus State ${state.counter}');
+           debugPrint('Plus State ${state.counter}');
           }
         }),
         builder: ((context, state) {
@@ -30,7 +32,7 @@ class CounterScreen extends StatelessWidget {
                     onPressed: () {
                       CounterCubit.get(context).minus();
                     },
-                    child: Text(
+                    child: const Text(
                       'M',
                       style: TextStyle(
                         fontSize: 20,
@@ -39,7 +41,7 @@ class CounterScreen extends StatelessWidget {
                   ),
                   Text(
                     '${CounterCubit.get(context).counter}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 50,
                       fontWeight: FontWeight.bold,
                     ),
@@ -48,7 +50,7 @@ class CounterScreen extends StatelessWidget {
                     onPressed: () {
                       CounterCubit.get(context).plus();
                     },
-                    child: Text(
+                    child: const Text(
                       'P',
                       style: TextStyle(
                         fontSize: 20,
